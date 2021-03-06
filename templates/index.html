@@ -5,169 +5,178 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
     <title>Final Project</title>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><h2></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-               
-            </div>
-        </div>
-    </nav>
-    </div>  
-    <div class="jumbotron jumbotron-fluid" style="border: 5px double gray;">
+<body class="home">
+    <div id="firstjumbo" class="jumbotron jumbotron-fluid">
         <div class="container">
             <h2 class="display-4">Diabetes and You</h2>
             <p class="lead">How Diabetes affects the human body</p>
-            <p>Diabetes is a disease that afffects the way your body hadnles glucose. Sugar that provides energy to your cells.</p>
-            <p>When you consume food, glucose is then absorbed by your intestines, which is then distributed to the cells in your body via your bloodstream. Currently there are two types of Diabetes. Type 1 and Type 2.</p>
+            <p class="lead">Diabetes is a disease that afffects the way your body hadnles glucose. Sugar that provides energy to your cells.</p>
+            <p class="lead">When you consume food, glucose is then absorbed by your intestines, which is then distributed to the cells in your body via your bloodstream. Currently there are two types of Diabetes. Type 1 and Type 2.</p>
         </div>
     </div>
 
     <div class="jumbotron jumbotron-fluid" style="border: 5px double gray">
-            <form action="{{ url_for("predict")}}" method="post">
-                            <div class="row">
-                                <div class="col-3">
-                                    <label for="Gender">Gender:</label>
-                                    <select name="Gender" class="form-select" aria-label="Default select example">
+        <form action="{{ url_for("predict")}}" method="post">
+            <div class="row">
+                <div class="col-3">
+                    <label for="Gender">Gender:</label>
+                    <select name="Gender" class="form-select" aria-label="Default select example">
                                         <option value="1">Male</option>
                                         <option value="0">Female</option>
                                     </select>
-                                    <label for="Polyuria">Polyuria:</label>
-                                    <select name="Polyuria" class="form-select" aria-label="Default select example">
+                    <label for="Polyuria">Polyuria:</label>
+                    <select name="Polyuria" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Polydipsia">Polydipsia:</label>
-                                    <select name="Polydipsia" class="form-select" aria-label="Default select example">
+                    <label for="Polydipsia">Polydipsia:</label>
+                    <select name="Polydipsia" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Sudden Weight Loss">Sudden Weight Loss:</label>
-                                    <select name="Sudden Weight Loss" class="form-select" aria-label="Default select example">
+                    <label for="Sudden Weight Loss">Sudden Weight Loss:</label>
+                    <select name="Sudden Weight Loss" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                </div>
-                                <div class="col-3">
-                                    <label for="Weakness">Weakness:</label>
-                                    <select name="Weakness" class="form-select" aria-label="Default select example">
+                </div>
+                <div class="col-3">
+                    <label for="Weakness">Weakness:</label>
+                    <select name="Weakness" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Polyphagia">Polyphagia:</label>
-                                    <select name="Polyphagia" class="form-select" aria-label="Default select example">
+                    <label for="Polyphagia">Polyphagia:</label>
+                    <select name="Polyphagia" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Genital Thrush">Genital Thrush:</label>
-                                    <select name="Genital Thrush" class="form-select" aria-label="Default select example">
+                    <label for="Genital Thrush">Genital Thrush:</label>
+                    <select name="Genital Thrush" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Visual Blurring">Visual Blurring:</label>
-                                    <select name="Visual Blurring" class="form-select" aria-label="Default select example">
+                    <label for="Visual Blurring">Visual Blurring:</label>
+                    <select name="Visual Blurring" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                </div>
-                                <div class="col-3">
-                                    <label for="Itching">Itching:</label>
-                                    <select name="Itching" class="form-select" aria-label="Default select example">
+                </div>
+                <div class="col-3">
+                    <label for="Itching">Itching:</label>
+                    <select name="Itching" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Irritability">Irritability:</label>
-                                    <select name="Irritability" class="form-select" aria-label="Default select example">
+                    <label for="Irritability">Irritability:</label>
+                    <select name="Irritability" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Delayed Healing">Delayed Healing:</label>
-                                    <select name="Delayed Healing" class="form-select" aria-label="Default select example">
+                    <label for="Delayed Healing">Delayed Healing:</label>
+                    <select name="Delayed Healing" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Partial Paresis">Partial Paresis:</label>
-                                    <select name="Partial Paresis" class="form-select" aria-label="Default select example">
+                    <label for="Partial Paresis">Partial Paresis:</label>
+                    <select name="Partial Paresis" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                </div>
-                                <div class="col-3">
-                                    <label for="Muscle Stiffness">Muscle Stiffness:</label>
-                                    <select name="Muscle Stiffness" class="form-select" aria-label="Default select example">
+                </div>
+                <div class="col-3">
+                    <label for="Muscle Stiffness">Muscle Stiffness:</label>
+                    <select name="Muscle Stiffness" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Alopecia">Alopecia:</label>
-                                    <select name="Alopecia" class="form-select" aria-label="Default select example">
+                    <label for="Alopecia">Alopecia:</label>
+                    <select name="Alopecia" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    <label for="Obesity">Obesity:</label>
-                                    <select name="Obesity" class="form-select" aria-label="Default select example">
+                    <label for="Obesity">Obesity:</label>
+                    <select name="Obesity" class="form-select" aria-label="Default select example">
                                         <option value="1">Yes</option>
                                         <option value="0">No</option>
                                     </select>
-                                    </select> 
-                                    
-                                </div>
-                                <div class="col-4">
-                                    <label for="Age">Age:</label>
-                                    <input type="number" id="Age" name="Age">
-                                    <input type="submit" value="Submit">
-                                </div>
-                                <br>
-                                <div class="col-12">
-                                        <h3>{{ pred }}</h3>
-                                </div>
-                            </div>             
-            </form>
-        </div>
+                    </select>
 
-    
-    <footer id="bottom" style="border: 5px double gray">
+                </div>
+                
+                <div class="col-12">
+                    <label for="Age">Age:</label>
+                    <input type="number" id="Age" name="Age">
+                    <input type="submit" value="Submit">
+                </div>
+                <br>
+                <div class="col-12">
+                    <h3>{{ pred }}</h3>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <h2 class="prevention" style="text-align: center;">Preventing Diabetes</h2>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Diet
+      </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the
+                    showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                    does limit overflow.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Phyiscal Activity
+      </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as
+                    the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the
+                    transition does limit overflow.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Placeholder
+      </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the
+                    showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+                    does limit overflow.
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="bottom">
         <div class="container">
             <div class="row ">
-                <div class="col-md-4 text-center text-md-left ">
-
-                    <div class="py-0">
-                        <h3 class="my-4 text-white">Machine Learning Project</h3>
-                        <p>Jeremy Jackson, Laine Canfield, Geoff Farrell, Jim Hernandez, Fatima Carrillo, Sehajpreet</p>
-
-
-
-                    </div>
-                </div>
-
-                <div class="col-md-4 text-white text-center text-md-left ">
-                    <div class="py-2 my-4">
-                        <div>
-
-                        </div>
-
-                        <div>
-                        </div>
-                        <div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 text-white my-4 text-center text-md-left ">
-                    <span class=" font-weight-bold "></span>
-                    <p class="text-warning my-2">
-                    </p>
-
+                <div class="py-0">
+                    <h3 class="my-4 text-black">Machine Learning Project</h3>
+                    <p class="participants text-black">Jeremy Jackson, Laine Canfield, Geoff Farrell, Jim Hernandez, Fatima Carrillo, Sehajpreet</p>
+                    <br>
+                    <p  class="participants text-black">UCI Data Analytics - Machine Learning Project</p>
                 </div>
             </div>
         </div>
