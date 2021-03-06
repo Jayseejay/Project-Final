@@ -37,7 +37,7 @@ def predict():
     
         new_row_df = pd.DataFrame([pd.Series([Age, Gender, Polyuria, Polydipsia, sudden_weight_loss, weakness, Polyphagia, Genital_thrush, visual_blurring, Itching, Irritability, delayed_healing, partial_paresis, muscle_stiffness, Alopecia, Obesity])])  ### Creating a dataframe using all the values
         print(new_row_df)
-        prediction=model.predict_proba(new_row_df) ## Predicting the output
+        prediction=model.predict(new_row_df) ## Predicting the output
         output='{0:.{1}f}'.format(prediction[0][1], 2)    ## Out Formatting
 
         if output>str(0.5):
