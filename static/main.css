@@ -1,0 +1,9 @@
+.card {
+    border: 5px double gray;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.col-12 {
+    text-align: center;
+}
