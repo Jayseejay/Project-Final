@@ -7,3 +7,9 @@
 .col-12 {
     text-align: center;
 }
+
+#bottom {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
