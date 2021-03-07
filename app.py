@@ -41,9 +41,9 @@ def predict():
         output='{0:.{1}f}'.format(prediction[0][1], 2)    ## Out Formatting
 
         if output>str(0.5):
-            return render_template('index.html',pred='You have chance of having diabetes.\nProbability of having Diabetes is {}'.format(output)) ## Returning the message for use on the same index.html page
+            return render_template('index.html',pred='Risk for developing diabetes: HIGH!!!')
         else:
-            return render_template('index.html',pred='You are safe.\n Probability of having diabetes is {}'.format(output)) 
+            return render_template('index.html',pred='Risk for developing diabetes: Low')
     else:
         return render_template('index.html')
 
